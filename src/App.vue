@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <h1 class="block">My resume{{ msg }}</h1>
 
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h3>{{ count }}</h3>
@@ -9,8 +9,11 @@
     <button @click="clickCounter"><b>sdfdsf</b></button>
     <button @click="getFromServer">From server</button>
     <button @click="getFromServer">From server2</button>
+    <footer class="connect">
+
+    </footer>
   </div>
-</template>
+ </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
@@ -52,6 +55,13 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.block{
+  margin: 0 auto;
+  text-align: center;
+  padding: 100px;
+  border-radius: 10px;
+  background-color: seagreen;
+}
 
 </style>
