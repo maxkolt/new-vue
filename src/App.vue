@@ -2,7 +2,21 @@
   <div id="app">
     <h1 class="block">{{ firstName }}</h1>
     <img class="face" alt="foto" src="./assets/face.png"/>
-    <a v-bind:href="linkUrl">My GitHub</a>
+    <a :href="linkUrl">My GitHub</a>
+    <h5>
+      <img alt="country" src="./assets/iconsCountry.png">
+      Russia, Moscow
+    </h5>
+    <h5>
+      <img alt="year" src="./assets/iconsYear.png">
+      12 / 08 / 1991
+    </h5>
+    <h5 class="mail">
+      <img alt="icons" src="./assets/iconsMail.png">
+      {{ gmail }}
+    </h5>
+
+
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h3>{{ count }}</h3>
     <h3>Ответ от сервака: {{ serverData }}</h3>
@@ -29,10 +43,11 @@ export default {
   data() {
     return {
       firstName: 'Maxim Koltovich',
+      gmail: '12345kolt@gmail.com',
+      linkUrl: "https://github.com/maxkolt",
       count: 0,
       serverData: null,
       serverData2: null,
-      linkUrl: "https://github.com/maxkolt"
     }
   },
   methods: {
@@ -59,6 +74,11 @@ export default {
 </script>
 
 <style scoped>
+* {
+  margin: 0;
+
+}
+
 .block {
   margin: 0 auto;
   text-align: center;
@@ -70,6 +90,10 @@ export default {
 .face {
   width: 100px;
   height: 100px;
+}
+
+.mail {
+  color: cadetblue;
 }
 
 </style>
