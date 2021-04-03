@@ -3,18 +3,19 @@
     <h1 class="block">{{ firstName }}</h1>
     <img class="face" alt="foto" src="./assets/face.png"/>
     <a :href="linkUrl">My GitHub</a>
-    <h5>
-      <img alt="country" src="./assets/iconsCountry.png">
-      Russia, Moscow
-    </h5>
-    <h5>
-      <img alt="year" src="./assets/iconsYear.png">
-      12 / 08 / 1991
-    </h5>
-    <h5 class="mail">
-      <img alt="icons" src="./assets/iconsMail.png">
-      {{ gmail }}
-    </h5>
+      <h5>
+        <img alt="country" src="./assets/iconsCountry.png">
+        Russia, Moscow
+      </h5>
+      <h5>
+        <img alt="year" src="./assets/iconsYear.png">
+        12 / 08 / 1991
+      </h5>
+      <h5 class="mail">
+        <img alt="icons" src="./assets/iconsMail.png">
+        {{ gmail }}
+      </h5>
+
 
 
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -24,9 +25,7 @@
     <button @click="clickCounter"><b>sdfdsf</b></button>
     <button @click="getFromServer">From server</button>
     <button @click="getFromServer">From server2</button>
-    <footer class="connect">
 
-    </footer>
   </div>
 </template>
 
@@ -74,9 +73,8 @@ export default {
 </script>
 
 <style scoped>
-* {
+h5 {
   margin: 0;
-
 }
 
 .block {
@@ -95,5 +93,6 @@ export default {
 .mail {
   color: cadetblue;
 }
+
 
 </style>
