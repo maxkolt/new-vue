@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <h1 class="block">My resume{{ msg }}</h1>
+    <h1 class="block">{{ firstName }}</h1>
     <img class="face" alt="foto" src="./assets/face.png"/>
+    <a v-bind:href="linkUrl">My GitHub</a>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <h3>{{ count }}</h3>
     <h3>Ответ от сервака: {{ serverData }}</h3>
@@ -27,9 +28,11 @@ export default {
   },
   data() {
     return {
+      firstName: 'Maxim Koltovich',
       count: 0,
       serverData: null,
-      serverData2: null
+      serverData2: null,
+      linkUrl: "https://github.com/maxkolt"
     }
   },
   methods: {
@@ -59,7 +62,7 @@ export default {
 .block {
   margin: 0 auto;
   text-align: center;
-  padding: 100px;
+  padding: 50px;
   border-radius: 10px;
   background-color: seagreen;
 }
