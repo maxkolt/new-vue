@@ -1,21 +1,30 @@
 <template>
   <div id="app">
+    <section class="leftBlock">
+      <img class="face" alt="foto" src="./assets/face.png"/>
+      <ul class="menu">
+        <li>ABOUT</li>
+        <li>EXPERIENCE</li>
+        <li>EDUCATION</li>
+        <li>SKILLS</li>
+        <li>BIO</li>
+      </ul>
+    </section>
+    <section class="rightBloc">
     <h1 class="block">{{ firstName }}</h1>
-    <img class="face" alt="foto" src="./assets/face.png"/>
     <a :href="linkUrl">My GitHub</a>
-      <h5>
-        <img alt="country" src="./assets/iconsCountry.png">
-        Russia, Moscow
-      </h5>
-      <h5>
-        <img alt="year" src="./assets/iconsYear.png">
-        12 / 08 / 1991
-      </h5>
-      <h5 class="mail">
-        <img alt="icons" src="./assets/iconsMail.png">
-        {{ gmail }}
-      </h5>
-
+    <h5>
+      <img alt="country" src="./assets/iconsCountry.png">
+      Russia, Moscow
+    </h5>
+    <h5>
+      <img alt="year" src="./assets/iconsYear.png">
+      12 / 08 / 1991
+    </h5>
+    <h5 class="mail">
+      <img alt="icons" src="./assets/iconsMail.png">
+      {{ gmail }}
+    </h5>
 
 
     <HelloWorld msg="Welcome to Your Vue.js App"/>
@@ -25,7 +34,7 @@
     <button @click="clickCounter"><b>sdfdsf</b></button>
     <button @click="getFromServer">From server</button>
     <button @click="getFromServer">From server2</button>
-
+    </section>
   </div>
 </template>
 
@@ -73,26 +82,46 @@ export default {
 </script>
 
 <style scoped>
+
+
 h5 {
   margin: 0;
 }
 
 .block {
-  margin: 0 auto;
   text-align: center;
-  padding: 50px;
-  border-radius: 10px;
-  background-color: seagreen;
 }
 
 .face {
-  width: 100px;
-  height: 100px;
+  border-radius: 100px;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
 }
 
 .mail {
   color: cadetblue;
 }
 
+.leftBlock {
+  background-color: darkseagreen;
+}
+
+.leftBlock {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  text-align: center;
+  justify-content: center;
+  height: 900px;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 0;
+  line-height: 25px;
+}
 
 </style>
