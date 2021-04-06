@@ -90,6 +90,10 @@ h5 {
 
 .block {
   text-align: center;
+  font-style: italic;
+  font-family: Calibri;
+  font-size: 65px;
+  margin-right: 60%;
 }
 
 .face {
@@ -100,7 +104,7 @@ h5 {
 }
 
 .mail {
-  color: cadetblue;
+  color: darkseagreen;
 }
 
 .leftBlock {
@@ -108,14 +112,21 @@ h5 {
 }
 
 .leftBlock {
+  position: absolute;
   display: flex;
   flex-direction: column;
   width: 20%;
   text-align: center;
   justify-content: center;
-  height: 900px;
+  height: 98%;
 }
 
+.rightBloc {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin-left: 21%;
+}
 .menu {
   display: flex;
   flex-direction: column;
