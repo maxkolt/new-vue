@@ -11,29 +11,30 @@
       </ul>
     </section>
     <section class="rightBloc">
-    <h1 class="block">{{ firstName }}</h1>
-    <a :href="linkUrl">My GitHub</a>
-    <h5>
-      <img alt="country" src="./assets/iconsCountry.png">
-      Russia, Moscow
-    </h5>
-    <h5>
-      <img alt="year" src="./assets/iconsYear.png">
-      12 / 08 / 1991
-    </h5>
-    <h5 class="mail">
-      <img alt="icons" src="./assets/iconsMail.png">
-      {{ gmail }}
-    </h5>
+      <h1 class="block">{{ firstName }}
+        <span style="color: cadetblue">Koltovith</span>
+      </h1>
+      <a :href="linkUrl">My GitHub</a>
+      <h5>
+        <img alt="country" src="./assets/iconsCountry.png">
+        Russia, Moscow
+      </h5>
+      <h5>
+        <img alt="year" src="./assets/iconsYear.png">
+        12 / 08 / 1991
+      </h5>
+      <h5 class="mail">
+        <img alt="icons" src="./assets/iconsMail.png">
+        {{ gmail }}
+      </h5>
 
+      <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <h3>{{ count }}</h3>
+      <h3>Ответ от сервака: {{ serverData }}</h3>
 
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <h3>{{ count }}</h3>
-    <h3>Ответ от сервака: {{ serverData }}</h3>
-
-    <button @click="clickCounter"><b>sdfdsf</b></button>
-    <button @click="getFromServer">From server</button>
-    <button @click="getFromServer">From server2</button>
+      <button @click="clickCounter"><b>sdfdsf</b></button>
+      <button @click="getFromServer">From server</button>
+      <button @click="getFromServer">From server2</button>
     </section>
   </div>
 </template>
@@ -50,7 +51,7 @@ export default {
   },
   data() {
     return {
-      firstName: 'Maxim Koltovich',
+      firstName: 'Maxim',
       gmail: '12345kolt@gmail.com',
       linkUrl: "https://github.com/maxkolt",
       count: 0,
@@ -59,6 +60,7 @@ export default {
     }
   },
   methods: {
+
     clickCounter() {
       this.count = this.count + 1;
     },
@@ -104,11 +106,11 @@ h5 {
 }
 
 .mail {
-  color: darkseagreen;
+  color: cadetblue;
 }
 
 .leftBlock {
-  background-color: darkseagreen;
+  background-color: cadetblue;
 }
 
 .leftBlock {
@@ -127,6 +129,7 @@ h5 {
   position: relative;
   margin-left: 21%;
 }
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -136,7 +139,7 @@ h5 {
 }
 
 #app {
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
 }
 
 </style>
