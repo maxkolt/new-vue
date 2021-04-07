@@ -135,4 +135,8 @@ h5 {
   line-height: 25px;
 }
 
+#app {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
 </style>
