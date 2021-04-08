@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <section class="leftBlock">
+
       <img class="face" alt="foto" src="./assets/face.png"/>
       <ul class="menu">
         <li>ABOUT</li>
@@ -41,6 +42,8 @@
 </template>
 
 <script>
+import Documents from "./components/Documents";
+import About from "./components/About";
 import HelloWorld from './components/HelloWorld.vue'
 import axios from 'axios'
 
@@ -48,7 +51,9 @@ export default {
 
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    About,
+    Documents
   },
   data() {
     return {
