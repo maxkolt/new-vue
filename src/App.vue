@@ -42,8 +42,6 @@
 </template>
 
 <script>
-import Documents from "./components/Documents";
-import About from "./components/About";
 import HelloWorld from './components/HelloWorld.vue'
 import axios from 'axios'
 
@@ -52,8 +50,6 @@ export default {
   name: 'App',
   components: {
     HelloWorld,
-    About,
-    Documents
   },
   data() {
     return {
