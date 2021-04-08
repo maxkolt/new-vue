@@ -31,10 +31,11 @@
       <HelloWorld msg="Welcome to Your Vue.js App"/>
       <h3>{{ count }}</h3>
       <h3>Ответ от сервака: {{ serverData }}</h3>
-
-      <button @click="clickCounter"><b>sdfdsf</b></button>
-      <button @click="getFromServer">From server</button>
-      <button @click="getFromServer">From server2</button>
+      <div class="click">
+        <button @click="clickCounter"><b>sdfdsf</b></button>
+        <button @click="getFromServer">From server</button>
+        <button @click="getFromServer">From server2</button>
+      </div>
     </section>
   </div>
 </template>
@@ -140,6 +141,12 @@ h5 {
 
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
+}
+
+.click {
+  display: flex;
+  flex-direction: column;
+  width: 10%;
 }
 
 </style>
