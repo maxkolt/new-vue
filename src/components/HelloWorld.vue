@@ -1,14 +1,21 @@
 <template>
   <div class="hello">
-    <button @click="onClick">Send Event</button>
+    <button class="button" @click="onClick">Прогноз погоды</button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  data(){
+    return{
+      count: 23
+
+    }
+
+  },
   methods: {
-    onClick(){
+    onClick() {
 
     }
   }
@@ -17,21 +24,11 @@ export default {
 
 
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+.hello {
+  margin: 0 auto;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+.button {
+  border-radius: 5px;
 }
 </style>
