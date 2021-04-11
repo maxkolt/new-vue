@@ -5,25 +5,36 @@
     <h5>{{davlenie}}</h5>
     <button class="button" @click="onClick">Прогноз погоды</button>
   </div>
+  <h3>{{ serverData }}</h3>
+  <button @click="getServer">Ответ сервера</button>
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: 'HelloWorld',
   data(){
     return{
       temperstura: 23 + 'C',
       veter: 23 + 'км.ч',
-      davlenie: 48 + '%'
-
+      davlenie: 48 + '%',
+      serverData: null
     }
 
   },
   methods: {
     onClick() {
-      this.;
-    }
-  }
+
+    },
+    getServer() {
+      axios
+          .get('https://www.foaas.com/cup/:Maxim')
+          .then(response => (
+              this.serverData = response.data
+          ));
+    },
+  },
 }
 </script>
 

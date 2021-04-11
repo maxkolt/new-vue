@@ -34,8 +34,7 @@
       <h3>Ответ от сервака: {{ serverData }}</h3>
       <div class="click">
         <button @click="clickCounter"><b>sdfdsf</b></button>
-        <button @click="getFromServer">From server</button>
-        <button @click="getFromServer">From server2</button>
+
       </div>
     </section>
   </div>
@@ -56,9 +55,7 @@ export default {
       firstName: 'Maxim',
       gmail: '12345kolt@gmail.com',
       linkUrl: "https://github.com/maxkolt",
-      count: 0,
-      serverData: null,
-      serverData2: null,
+      count: 0
     }
   },
   methods: {
@@ -66,21 +63,6 @@ export default {
     clickCounter() {
       this.count = this.count + 1;
     },
-    getFromServer() {
-      axios
-          .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-          .then(response => (
-              this.serverData = response.data.bpi.USD.code
-          ));
-    },
-    getFromDataServer() {
-      axios
-          .get('https://www.foaas.com/cup/:Maxim')
-          .then(response => (
-              this.serverData = response.data.bpi.USD.code
-          ));
-    }
-
   }
 }
 </script>
