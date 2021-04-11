@@ -31,14 +31,10 @@
 
       <HelloWorld msg="Welcome to Your Vue.js App"/>
 
-     <!-- <div class="click">
-        <h3>{{ count }}</h3>
-        <button @click="clickCounter"><b>sdfdsf</b></button>
-      </div>-->
-
-      <div>{{ serverData }}</div>
+      <div class="click">
+      <h1>{{ serverData }}</h1>
       <button @click="getServer">Ответ сервера</button>
-
+      </div>
     </section>
   </div>
 </template>
@@ -59,7 +55,6 @@ export default {
       firstName: 'Maxim',
       gmail: '12345kolt@gmail.com',
       linkUrl: "https://github.com/maxkolt",
-      count: 0,
       serverData: null
     }
   },
@@ -68,7 +63,7 @@ export default {
       axios
           .get('https://www.foaas.com/cup/:Maxim')
           .then(response => (
-              this.serverData = response.data
+              this.serverData = response.data.message
           ));
     }
   }
