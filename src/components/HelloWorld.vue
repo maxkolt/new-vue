@@ -5,8 +5,6 @@
     <h5>{{davlenie}}</h5>
     <button class="button" @click="onClick">Прогноз погоды</button>
   </div>
-  <h3>{{ serverData }}</h3>
-  <button @click="getServer">Ответ сервера</button>
 </template>
 
 <script>
@@ -26,15 +24,9 @@ export default {
   methods: {
     onClick() {
 
-    },
-    getServer() {
-      axios
-          .get('https://www.foaas.com/cup/:Maxim')
-          .then(response => (
-              this.serverData = response.data
-          ));
-    },
-  },
+    }
+
+  }
 }
 </script>
 
