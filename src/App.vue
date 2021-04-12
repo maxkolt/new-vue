@@ -32,8 +32,8 @@
       <HelloWorld msg="Welcome to Your Vue.js App"/>
 
       <div class="click">
-      <h1>{{ serverData }}</h1>
-      <button @click="getServer">Ответ сервера</button>
+      <h1>{{ temperatura }}</h1>
+      <button @click="weatherResponse">Ответ сервера</button>
       </div>
     </section>
   </div>
@@ -52,6 +52,7 @@ export default {
   },
   data() {
     return {
+      temperatura: '',
       firstName: 'Maxim',
       gmail: '12345kolt@gmail.com',
       linkUrl: "https://github.com/maxkolt",
@@ -59,18 +60,21 @@ export default {
     }
   },
   methods: {
-    getServer() {
-      axios
-          .get('https://www.foaas.com/cup/:Maxim')
-          .then(response => (
-              this.serverData = response.data.message
-          ));
-    },
+   // getServer() {
+    //  axios
+      //    .get('https://www.foaas.com/cup/:Maxim')
+        //  .then(response => (
+          //    this.serverData = response.data.message
+         // ));
+    //},
     weatherResponse() {
       axios
-      .get('http://api.weatherstack.com/current'
-          ? access_key = a54d1451af691342e975fde0186820bf
-          & query = Minsk)
+      .get('http://api.weatherstack.com/current',
+         'access_key = a54d1451af691342e975fde0186820bf',
+          'query = New York')
+      .then(response => (
+          this.temperatura = response.data
+      ))
     }
   }
 }
