@@ -65,6 +65,12 @@ export default {
           .then(response => (
               this.serverData = response.data.message
           ));
+    },
+    weatherResponse() {
+      axios
+      .get('http://api.weatherstack.com/current'
+          ? access_key = a54d1451af691342e975fde0186820bf
+          & query = Minsk)
     }
   }
 }
