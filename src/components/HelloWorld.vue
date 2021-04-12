@@ -1,29 +1,45 @@
 <template>
   <div class="hello">
-    <h3>{{ temperstura }}</h3>
-    <h5>{{ veter }}</h5>
-    <h5>{{davlenie}}</h5>
-    <button class="button" @click="onClick">Прогноз погоды</button>
+
+    <div>
+      <b-card
+          title="Card Title"
+          img-src=""
+          img-alt="Image"
+          img-top
+          tag="article"
+          style="max-width: 20rem;"
+          class="mb-2"
+      >
+        <b-card-text>
+         <h3>{{ temperatura }}</h3>
+        </b-card-text>
+        <b-button @click="weatherResponse" href="#" variant="primary">Узнать погоду</b-button>
+      </b-card>
+    </div>
   </div>
 </template>
 
 <script>
+
 import axios from "axios";
 
 export default {
   name: 'HelloWorld',
-  data(){
-    return{
-      temperstura: 23 + 'C',
-      veter: 23 + 'км.ч',
-      davlenie: 48 + '%',
+  data() {
+    return {
+      temperatura: '',
       serverData: null
     }
 
   },
   methods: {
-    onClick() {
-
+    weatherResponse() {
+      axios
+          .get('http://api.weatherstack.com/current ? access_key = a54d1451af691342e975fde0186820bf & query = Minsk')
+          .then(response => (
+              this.temperatura = response.data
+          ))
     }
 
   }
