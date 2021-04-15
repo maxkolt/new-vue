@@ -34,16 +34,17 @@ export default {
     }
 
   },
+  created() {
+    const cuurent = this.$axios('https://api.weatherstack.com/current' + `  ? ${this.access_key} = YOUR_ACCESS_KEY ` + '& query = New York')
+          .then(response => r.data.request.type.location.name)
+
+
+
+          this.temperatura = request.type
+    },
+
   methods: {
-    weatherResponse() {
-      axios
-          .get('https://api.weatherstack.com/current' + `  ? ${this.access_key} = YOUR_ACCESS_KEY ` + '& query = New York')
-          .then(response => (
-              this.temperatura = response.data.request.location
 
-
-          ))
-    }
 
   }
 }
