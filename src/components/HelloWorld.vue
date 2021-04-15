@@ -29,6 +29,7 @@ export default {
   data() {
     return {
       temperatura: '',
+      access_key: 'a54d1451af691342e975fde0186820bf',
       serverData: null
     }
 
@@ -36,9 +37,11 @@ export default {
   methods: {
     weatherResponse() {
       axios
-          .get('http://api.weatherstack.com/current ? access_key = a54d1451af691342e975fde0186820bf & query = Minsk')
+          .get('https://api.weatherstack.com/current' + `  ? ${this.access_key} = YOUR_ACCESS_KEY ` + '& query = New York')
           .then(response => (
-              this.temperatura = response.data
+              this.temperatura = response.data.request.location
+
+
           ))
     }
 
