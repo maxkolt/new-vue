@@ -3,7 +3,7 @@
 
         <div>
             <b-card
-                    title="Card Title"
+                    :title="city"
                     img-src=""
                     img-alt="Image"
                     img-top
@@ -23,12 +23,17 @@
 <script>
     const axios = require('axios');
     export default {
-        name: 'HelloWorld',
+        props:{
+          city:{
+              type: String,
+              required: true
+          }
+        },
         data() {
             return {
                 temperatura: '',
                 accessKey: 'a54d1451af691342e975fde0186820bf',
-                serverData: {},
+                serverData: {}
             }
 
         },
@@ -38,8 +43,7 @@
 
         methods: {
             getWeatherFromRemoteServer() {
-                let city = `Minsk`;
-                axios.get(`http://api.weatherstack.com/current?access_key=${this.accessKey}&query=${city}`)
+                axios.get(`http://api.weatherstack.com/current?access_key=${this.accessKey}&query=${this.city}`)
                     .then(response => {
                         this.serverData = response.data;
                         console.log('Ответ получен');
