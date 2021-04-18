@@ -1,62 +1,62 @@
 <template>
-  <div class="hello">
+    <div class="hello">
 
-    <div>
-      <b-card
-          title="Card Title"
-          img-src=""
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2"
-      >
-        <b-card-text>
-         <h3>{{ temperatura }}</h3>
-        </b-card-text>
-        <b-button @click="weatherResponse" href="#" variant="primary">Узнать погоду</b-button>
-      </b-card>
+        <div>
+            <b-card
+                    title="Card Title"
+                    img-src=""
+                    img-alt="Image"
+                    img-top
+                    tag="article"
+                    style="max-width: 20rem;"
+                    class="mb-2"
+            >
+                <b-card-text>
+                    <h3>{{ temperatura }}</h3>
+                </b-card-text>
+                <b-button href="#" variant="primary">Узнать погоду</b-button>
+            </b-card>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
+    const axios = require('axios');
+    export default {
+        name: 'HelloWorld',
+        data() {
+            return {
+                temperatura: '',
+                accessKey: 'a54d1451af691342e975fde0186820bf',
+                serverData: {},
+            }
 
-import axios from "axios";
+        },
+        created() {
+            this.getWeatherFromRemoteServer();
+        },
 
-export default {
-  name: 'HelloWorld',
-  data() {
-    return {
-      temperatura: '',
-      access_key: 'a54d1451af691342e975fde0186820bf',
-      serverData: null
+        methods: {
+            getWeatherFromRemoteServer() {
+                let city = `Minsk`;
+                axios.get(`http://api.weatherstack.com/current?access_key=${this.accessKey}&query=${city}`)
+                    .then(response => {
+                        this.serverData = response.data;
+                        console.log('Ответ получен');
+                        console.dir(this.serverData);
+                    })
+            }
+        }
     }
-
-  },
-  created() {
-    const cuurent = this.$axios(`https://api.weatherstack.com/current?gvgvgg=${this.access_key}` + '& query = New York')
-          .then(response => response.data.request.type.location.name)
-
-
-
-          this.temperatura = request.type
-    },
-
-  methods: {
-
-
-  }
-}
 </script>
 
 
 <style scoped>
-.hello {
-  margin: 0 auto;
-}
+    .hello {
+        margin: 0 auto;
+    }
 
-.button {
-  border-radius: 5px;
-}
+    .button {
+        border-radius: 5px;
+    }
 </style>

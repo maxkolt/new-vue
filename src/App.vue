@@ -32,7 +32,7 @@
       <Weather msg="Welcome to Your Vue.js App"/>
 
       <div class="click">
-        <h1>{{ temperatura }}</h1>
+<!--        <h1>{{ temperatura }}</h1>-->
        <!-- <button @click="weatherResponse">Ответ сервера</button> -->
       </div>
     </section>
@@ -42,11 +42,8 @@
 
 <script>
 import Weather from './components/Weather.vue'
-import axios from "axios";
-
 
 export default {
-
   name: 'App',
   components: {
     Weather,
