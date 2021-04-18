@@ -29,13 +29,12 @@
                 {{ gmail }}
             </h5>
 
-            <Weather
-                    city="Minsk"
-                    msg="Welcome to Your Vue.js App"/>
+            <Weather :city="currentCity" msg="Welcome to Your Vue.js App"/>
+            <Weather city="Moscow" msg="Welcome to Your Vue.js App"/>
 
             <div class="click">
-                <!--        <h1>{{ temperatura }}</h1>-->
-                <!-- <button @click="weatherResponse">Ответ сервера</button> -->
+
+<!--                 <button @click="">Ответ сервера</button> -->
             </div>
         </section>
     </div>
@@ -52,6 +51,7 @@
         },
         data() {
             return {
+                currentCity: 'Minsk',
                 firstName: 'Maxim',
                 gmail: '12345kolt@gmail.com',
                 linkUrl: "https://github.com/maxkolt",

@@ -12,7 +12,8 @@
                     class="mb-2"
             >
                 <b-card-text>
-                    <h3>{{ temperatura }}</h3>
+                    <h1>{{serverData.current.temperature}}</h1>
+<!--                    <h3>{{ temperatura }}</h3>-->
                 </b-card-text>
                 <b-button href="#" variant="primary">Узнать погоду</b-button>
             </b-card>
@@ -23,11 +24,11 @@
 <script>
     const axios = require('axios');
     export default {
-        props:{
-          city:{
-              type: String,
-              required: true
-          }
+        props: {
+            city: {
+                type: String,
+                required: true
+            }
         },
         data() {
             return {
