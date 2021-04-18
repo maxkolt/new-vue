@@ -29,7 +29,7 @@
         {{ gmail }}
       </h5>
 
-      <HelloWorld msg="Welcome to Your Vue.js App"/>
+      <Weather msg="Welcome to Your Vue.js App"/>
 
       <div class="click">
         <h1>{{ temperatura }}</h1>
@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Weather from './components/Weather.vue'
 import axios from "axios";
 
 
@@ -49,7 +49,7 @@ export default {
 
   name: 'App',
   components: {
-    HelloWorld,
+    Weather,
   },
   data() {
     return {

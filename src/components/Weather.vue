@@ -35,8 +35,8 @@ export default {
 
   },
   created() {
-    const cuurent = this.$axios('https://api.weatherstack.com/current' + `  ? ${this.access_key} = YOUR_ACCESS_KEY ` + '& query = New York')
-          .then(response => r.data.request.type.location.name)
+    const cuurent = this.$axios(`https://api.weatherstack.com/current?gvgvgg=${this.access_key}` + '& query = New York')
+          .then(response => response.data.request.type.location.name)
 
 
 
