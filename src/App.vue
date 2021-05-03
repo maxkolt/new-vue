@@ -34,7 +34,11 @@
 
             <div class="click">
 
-<!--                 <button @click="">Ответ сервера</button> -->
+                <!--                 <button @click="">Ответ сервера</button> -->
+            </div>
+            <div>
+                <input type="date" class="form-control">
+
             </div>
         </section>
     </div>
