@@ -36,9 +36,9 @@
 
                 <!--                 <button @click="">Ответ сервера</button> -->
             </div>
-            <div>
+            <div  col-3>
                 <input type="date" class="form-control">
-
+                <input type="date" class="form-control">
             </div>
         </section>
     </div>
