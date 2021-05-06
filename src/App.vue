@@ -32,6 +32,15 @@
             <Weather :city="currentCity" msg="Welcome to Your Vue.js App"/>
             <Weather city="Moscow" msg="Welcome to Your Vue.js App"/>
 
+            <div id="demo">
+                <button v-on:click="show = !show">
+                    Переключить
+                </button>
+                <transition name="fade">
+                    <p v-if="show">привет</p>
+                </transition>
+            </div>
+
             <div class="click">
 
                 <!--                 <button @click="">Ответ сервера</button> -->
