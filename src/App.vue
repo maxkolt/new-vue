@@ -45,7 +45,7 @@
 
                 <!--                 <button @click="">Ответ сервера</button> -->
             </div>
-            <div  col-3>
+            <div col-3>
                 <input type="date" class="form-control">
                 <input type="date" class="form-control">
             </div>
@@ -64,6 +64,7 @@
         },
         data() {
             return {
+                show: true,
                 currentCity: 'Minsk',
                 firstName: 'Maxim',
                 gmail: '12345kolt@gmail.com',
@@ -152,6 +153,15 @@
         display: flex;
         flex-direction: column;
         width: 10%;
+    }
+
+    .fade-enter-active, .fade-leave-active {
+        transition: opacity .5s;
+    }
+
+    .fade-enter, .fade-leave-to
+    {
+        opacity: 0;
     }
 
 </style>
