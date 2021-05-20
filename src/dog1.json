@@ -1,0 +1,15 @@
+{
+  "id": 1,
+  "name": "Krull",
+  "age": "2",
+  "body": "тактильный",
+  "character": {
+    "ест": "МНОГО",
+    "sleep": false
+  },
+  "friends": [
+    "Миша",
+    "Гоша"
+  ],
+  "enemies": []
+}

@@ -13,7 +13,7 @@
             >
                 <b-card-text>
                     <h1>{{serverData.current.temperature}}</h1>
-<!--                    <h3>{{ temperatura }}</h3>-->
+                    <!--                    <h3>{{ temperatura }}</h3>-->
                 </b-card-text>
                 <b-button href="#" variant="primary">Узнать погоду</b-button>
             </b-card>
@@ -43,6 +43,28 @@
         },
 
         methods: {
+            getDog() {
+                fetch('./api/some.json')
+                    .then(
+                        response => {
+                            if (response.status !== 200) {
+                                console.log('Looks like there was a problem. Status Code: ' +
+                                    response.status);
+                                return;
+                            }
+
+                            // Examine the text in the response
+                            response.json().then(data => {
+                                console.log(data);
+                            });
+                        }
+                    )
+                    .catch(err => {
+                        console.log('Fetch Error :-S', err);
+                    });
+            },
+
+
             getWeatherFromRemoteServer() {
                 axios.get(`http://api.weatherstack.com/current?access_key=${this.accessKey}&query=${this.city}`)
                     .then(response => {
