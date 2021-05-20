@@ -29,8 +29,9 @@
                 {{ gmail }}
             </h5>
 
-            <Weather :city="currentCity" msg="Welcome to Your Vue.js App"/>
-            <Weather city="Moscow" msg="Welcome to Your Vue.js App"/>
+            <Dog :city="currentCity" msg="Welcome to Your Vue.js App"/>
+            <Dog city="Moscow" msg="Welcome to Your Vue.js App"/>
+            <b-button @click="getDog">Узнать имя</b-button>
 
             <div id="demo">
                 <button v-on:click="show = !show">
@@ -55,12 +56,12 @@
 </template>
 
 <script>
-    import Weather from './components/Weather.vue'
+    import Dog from './components/Dog.vue'
 
     export default {
         name: 'App',
         components: {
-            Weather,
+            Dog,
         },
         data() {
             return {
@@ -73,6 +74,23 @@
             }
         },
         methods: {
+            getDog: function () {
+                fetch('../dog1.json')
+                    .then(
+                        response => {
+                            response.json().then(data => {
+                                console.log(data);
+                            });
+                        }
+                    )
+                    .catch(err => console.log('Fetch Error :-S', err));
+            },
+
+
+
+
+
+
             // getServer() {
             //  axios
             //    .get('https://www.foaas.com/cup/:Maxim')
