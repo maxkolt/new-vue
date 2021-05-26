@@ -67,6 +67,14 @@
                         console.dir(this.serverData);
                     })
             }
+            getWeatherFromRemoteServer() {
+                axios.get(`http://api.weatherstack.com/current?access_key=${this.accessKey}&query=${this.city}`)
+                    .then(response => {
+                        this.serverData = response.data;
+                        console.log('Ответ получен');
+                        console.dir(this.serverData);
+                    })
+            }
         }
     }
 </script>
